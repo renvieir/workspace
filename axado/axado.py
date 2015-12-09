@@ -2,6 +2,7 @@ from myexceptions import LimitExceededError
 import sys
 import csv
 import os
+import math
 
 
 def extract_and_validate_args(args):
@@ -107,7 +108,7 @@ def calculate_one(origin, detination, nf, weight):
 
     total = subtotal / ((100.0 - taxa_icms) / 100.0)
 
-    print '{0}:{1}, {2}'.format('tabela', prazo, round(total, 2))
+    print '{0}:{1}, {2}'.format('tabela', prazo, round(total + .005, 2))
 
 
 def calculate_two(origin, detination, nf, weight):
@@ -133,7 +134,7 @@ def calculate_two(origin, detination, nf, weight):
 
     total = subtotal / ((100.0 - icms) / 100.0)
 
-    print '{0}:{1}, {2}'.format('tabela2', prazo, round(total, 2))
+    print '{0}:{1}, {2}'.format('tabela2', prazo, round(total + .005, 2))
 
 
 if __name__ == '__main__':
